@@ -36,11 +36,11 @@ public class BubbleSort {
      * Display array on screen.
      */
     public void display() {
-        System.out.println("[");
+        System.out.print("[");
         for (int i = 0; i < array.length; i++) {
-            System.out.println(array[i]);
+            System.out.print(array[i]);
             if (i < array.length - 1) {
-                System.out.println(", ");
+                System.out.print(", ");
             }
         }
         System.out.println("]");
