@@ -15,7 +15,7 @@ public class Main {
         Validation validator = new Validation();
 
         //Step 1: Input the number of elements in the array.
-        int size = validator.getInt("Enetr number of array: ",
+        int size = validator.getInt("Enter number of array: ",
                 "Error: Number must be grater than 0!",
                 "Error: Invalid integer number. Please enter again: ",
                 1, Integer.MAX_VALUE);
