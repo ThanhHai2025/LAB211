@@ -5,6 +5,7 @@ import java.util.Scanner;
 /**
  * Validation class check input data from keyboard.
  *
+ *
  * @version 11/09/2026
  * @author HaiNTHE191763
  */
@@ -15,7 +16,7 @@ public class Validation {
     public int getInt(String messageInfor, String messageErrorOutOfRange,
             String messageErrorInvalidNumber,
             int min, int max) {
-        
+
         //Loop infinitely until user enters a valid value.
         do {
             try {
