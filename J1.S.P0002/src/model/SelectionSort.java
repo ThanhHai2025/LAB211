@@ -46,7 +46,27 @@ public class SelectionSort {
         System.out.println("]");
     }
 
+    /**
+     * Sort array using Selection Sort algorithm.
+     */
     public void selectionSort() {
+        int minIndex;
 
+        // Duyệt từng vị trí trong mảng.
+        for (int i = 0; i < array.length - 1; i++) {
+            minIndex = i;
+            //Duyệt tìm phần tủ nhỏ nhất trong mảng chưa sắp xếp.
+            for (int j = i + 1; j < array.length; j++) {
+                //Find curently smaller element and update the position of this element
+                if (array[j] < array[minIndex]) {
+                    minIndex = j;
+                }
+            }
+            if (minIndex != i) {
+                int temp = array[minIndex];
+                array[minIndex] = array[i];
+                array[i] = temp;
+            }
+        }
     }
 }
