@@ -4,13 +4,16 @@ import java.util.Random;
 
 /**
  * BubbleSort class provides initialization, generates random array, displays
- * and sorts array bay Bubble Sort algorithm.
+ * and sorts array by Bubble Sort algorithm.
  *
  * @version 11/09/2026
  * @author HaiNTHE191763
  */
 public class BubbleSort {
 
+    /**
+     * Element attribute to store ArrayObj to integer.
+     */
     private int[] array;
 
     /**
@@ -23,7 +26,7 @@ public class BubbleSort {
     }
 
     /**
-     * Generate random array.
+     * Generate array with random element.
      */
     public void generateArray() {
         Random rand = new Random();
@@ -51,7 +54,7 @@ public class BubbleSort {
      */
     public void bubbleSort() {
 
-        //Duyệt qua từng lượt sắp xếp.
+        //Loop through each sorting pass
         for (int i = 0; i < array.length; i++) {
 
             //Push the largest elements to the end of the unsorted array.
@@ -64,5 +67,4 @@ public class BubbleSort {
             }
         }
     }
-
 }
