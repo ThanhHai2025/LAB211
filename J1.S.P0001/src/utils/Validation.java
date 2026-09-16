@@ -25,7 +25,8 @@ public class Validation {
      * @param max Maximum value allowed.
      * @return Valid integer value ​​are entered from the keyboard.
      */
-    public int getInt(String messageInfor, String messageErrorOutOfRange,
+    public int getInt(String messageInfor,
+            String messageErrorOutOfRange,
             String messageErrorInvalidNumber,
             int min, int max) {
 
