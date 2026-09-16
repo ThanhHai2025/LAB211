@@ -4,13 +4,16 @@ import java.util.Random;
 
 /**
  * SelectionSort class provides initialization, generates random array, displays
- * and sorts array bay Selection Sort algorithm.
+ * and sorts array by Selection Sort algorithm.
  *
  * @version 15/09/2026
  * @author HaiNTHE191763
  */
 public class SelectionSort {
 
+    /**
+     * Element attribute to store ArrayObj to integer.
+     */
     private int[] array;
 
     /**
@@ -23,7 +26,7 @@ public class SelectionSort {
     }
 
     /**
-     * Generate random array.
+     * Generate array with random element.
      */
     public void generateArray() {
         Random rand = new Random();
@@ -52,10 +55,10 @@ public class SelectionSort {
     public void selectionSort() {
         int minIndex;
 
-        // Duyệt từng vị trí trong mảng.
+        //Loop each positon in aray.
         for (int i = 0; i < array.length - 1; i++) {
             minIndex = i;
-            //Duyệt tìm phần tủ nhỏ nhất trong mảng chưa sắp xếp.
+            //Loop finding smallest element in unsorted array.
             for (int j = i + 1; j < array.length; j++) {
                 //Find curently smaller element and update the position of this element
                 if (array[j] < array[minIndex]) {

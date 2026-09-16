@@ -12,7 +12,21 @@ public class Validation {
 
     private Scanner scanner = new Scanner(System.in);
 
-    public int getInt(String messageInfor, String messageErrorOutOfRange,
+    /**
+     * The prompt asks a valid integer value entered from the keyboard,
+     * repeating until a correct value is entered.
+     *
+     * @param messageInfor Message asks the user input a valid value.
+     * @param messageErrorOutOfRange Error message when value is out of the
+     * range.
+     * @param messageErrorInvalidNumber Error message when value is not integer
+     * number.
+     * @param min Minimum value allowed.
+     * @param max Maximum value allowed.
+     * @return Valid integer value ​​are entered from the keyboard.
+     */
+    public int getInt(String messageInfor,
+            String messageErrorOutOfRange,
             String messageErrorInvalidNumber,
             int min, int max) {
 
