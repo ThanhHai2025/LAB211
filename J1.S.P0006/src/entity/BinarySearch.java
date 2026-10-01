@@ -53,7 +53,7 @@ public class BinarySearch {
     /**
      * Sort the array in ascending order.
      */
-    public void bubbleSort() {
+    public void sort() {
 
         //Loop through each sorting pass
         for (int i = 0; i < array.length; i++) {
@@ -70,27 +70,37 @@ public class BinarySearch {
     }
 
     /**
-     * Search the value in array using Binary Search.
+     * Search the value in the sorted array using Binary Search.
      *
      * @param key the value to search for.
-     * @return the index of first occurrence, or -1 if not found.
+     * @return the index of key, or -1 if not found.
      */
     public int binarySearch(int key) {
-        
-        //
+
+        //Set the left and right boundaries of the search range.
         int left = 0;
         int right = array.length - 1;
-        
-        while(left <= right){
-            int mid = (left + right) /2;
-            if(array[mid] < key){
+
+        //Repeat the search process until the key
+        while (left <= right) {
+
+            //Calculate the center position of the current search range.
+            int mid = (left + right) / 2;
+
+            //If the middle value is smaller than key, ignore the left half.
+            if (array[mid] < key) {
                 left = mid + 1;
-            } else if(array[mid] > key){
+
+                //If the middle value is greater than key, ignore the right half.
+            } else if (array[mid] > key) {
                 right = mid - 1;
-            } else{
+            } else {
+
+                // If the middle value matches key, return that position.
                 return mid;
             }
         }
+        //Return -1 when the key is not found.
         return -1;
     }
 }
