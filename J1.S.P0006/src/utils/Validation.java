@@ -3,7 +3,6 @@ package utils;
 import java.util.Scanner;
 
 /**
- * /**
  * Validation class check input data from keyboard.
  *
  * @version 30/09/2026
@@ -24,7 +23,7 @@ public class Validation {
      * number.
      * @param min Minimum value allowed.
      * @param max Maximum value allowed.
-     * @return Valid integer value ​​are entered from the keyboard.
+     * @return Valid integer value entered from the keyboard.
      */
     public int getInt(String messageInfor,
             String messageErrorOutOfRange,
