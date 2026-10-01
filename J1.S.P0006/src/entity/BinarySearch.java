@@ -70,7 +70,7 @@ public class BinarySearch {
     }
 
     /**
-     * Search the value in the sorted array using Binary Search.
+     * Search the value in the sorted ascending order array using Binary Search.
      *
      * @param key the value to search for.
      * @return the index of key, or -1 if not found.
