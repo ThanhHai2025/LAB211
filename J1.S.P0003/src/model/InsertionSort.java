@@ -4,7 +4,7 @@ import java.util.Random;
 
 /**
  * InsertionSort class provides initialization, generates random array, displays
- * and sorts array by Selection Sort algorithm.
+ * and sorts array by Insertion Sort algorithm.
  *
  * @version 17/09/2026
  * @author HaiNTHE191763
@@ -54,16 +54,16 @@ public class InsertionSort {
      */
     public void insertionSort() {
 
-        // Loop through each position starting from the second element.
+        // Loop through each position starting from the second element to end the array.
         for (int i = 1; i < array.length; i++) {
 
             // Store the current element to insert.
             int key = array[i];
 
-            // Start comparing from the element before key.
+            // The element in last of sorted part.
             int j = i - 1;
 
-            // Shift larger elements to the right.
+            // Shift element larger than the key to the right.
             while (j >= 0 && array[j] > key) {
                 array[j + 1] = array[j];
                 j--;
