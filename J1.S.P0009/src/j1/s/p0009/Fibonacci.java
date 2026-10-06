@@ -1,23 +1,18 @@
 package j1.s.p0009;
 
 /**
- * The Fibonacci class processing logic and display Fibonacci on screen.
+ * The Fibonacci class generates and displays the first 45 Fibonacci numbers
+ * using recursion method.
  *
  * @version 30/09/2026
  * @author HaiNTHE191763
  */
 public class Fibonacci {
 
-    // Array to store calculated Fibonacci numbers and avoid recalculation.
-    private long[] fiboCache;
-
     /**
-     * Constructs a Fibonacci object and initializes the cache for 45 Fibonacci
-     * numbers.
+     * Declare the limit of Fibonacci sequence
      */
-    public Fibonacci() {
-        fiboCache = new long[45];
-    }
+    private final int limit = 45;
 
     /**
      * Recursively calculates the Fibonacci number at position n.
@@ -34,31 +29,22 @@ public class Fibonacci {
         if (n == 1) {
             return 1;
         }
-
-        // Return the previously calculated value if available.
-        if (fiboCache[n] != 0) {
-            return fiboCache[n];
-        }
-
         //Recursively calculate F(n) = F(n - 1) + F(n - 2).
-        fiboCache[n] = getFibonacci(n - 1) + getFibonacci(n - 2);
-        return fiboCache[n];
+        return getFibonacci(n - 1) + getFibonacci(n - 2);
     }
 
     /**
-     * Displays the first count Fibonacci numbers.
-     *
-     * @param count the number of Fibonacci numbers to display.
+     * Displays the first 45 Fibonacci numbers on screen.
      */
-    public void displayFibonacci(int count) {
-        System.out.println("The " + count + " sequence fibonacci: ");
+    public void displayFibonacci() {
+        System.out.println("The 45 sequence fibonacci: ");
 
-        // Loop to run from index 0 to count - 1 to print each Fibonacci number.
-        for (int i = 0; i < count; i++) {
+        // Loop to run from index 0 to limit - 1 to print each Fibonacci number.
+        for (int i = 0; i < limit; i++) {
             System.out.print(getFibonacci(i));
 
             //Print commas and spaces for all numbers in array except the last one.
-            if (i < count - 1) {
+            if (i < limit - 1) {
                 System.out.print(", ");
             }
         }

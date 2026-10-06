@@ -8,13 +8,11 @@ package j1.s.p0009;
  */
 public class Main {
     public static void main(String[] args) {
-        // Number of Fibonacci numbers to display.
-        int count = 45;
-        
-        //Step 1: Create a Fibonacci object.
+
+        //Step 1: Initialize a Fibonacci object.
         Fibonacci fibonacci = new Fibonacci();
         
         //Step 2:  Display the first 45 Fibonacci numbers.
-        fibonacci.displayFibonacci(count);
+        fibonacci.displayFibonacci();
     }
 }
