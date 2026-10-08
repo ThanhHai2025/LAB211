@@ -143,7 +143,7 @@ public class Manager {
             //Add the new digit to the beginning of the result
             result = digits.charAt(remainder) + result;
 
-            //Remove the last processed digit by integer division.
+            //Get the quotient to continue the next division.
             decimalValue = decimalValue / toBase;
         }
         return result;
