@@ -7,17 +7,17 @@ package j1.s.p0011;
  * @author HaiNT
  */
 public class Manager {
-    
+
     /**
      * The base of the input value.
      */
     private int fromBase;
-    
+
     /**
      * The base of the output value.
      */
     private int toBase;
-    
+
     /**
      * The value entered by the user.
      */
@@ -82,10 +82,10 @@ public class Manager {
      */
     public String convert() {
 
-        // Step 1: Convert input to decimal
+        // Step 1: Convert the input value to decimal
         int decimalValue = convertToDecimal();
 
-        // Step 2: Convert decimal to output base
+        // Step 2: Convert the decimal value to the selected output base
         return convertFromDecimal(decimalValue);
     }
 
@@ -96,11 +96,22 @@ public class Manager {
      */
     private int convertToDecimal() {
         int decimalValue = 0;
+
+        //String containing all possible digits for base 2, 10 and 16.
         String digits = "0123456789ABCDEF";
+        //Convert hexadecimal letters to uppercase so that A-F
         String valueUpper = inputValue.toUpperCase();
+
+        //Loop through each character from left to right.
         for (int i = 0; i < valueUpper.length(); i++) {
+
+            //Get the current character from the input value.
             char character = valueUpper.charAt(i);
+
+            //Convert the character into its numeric value. EX: 'A' -> 10.
             int digit = digits.indexOf(character);
+
+            //Add the current digit to the decimal value according to the selected input base.
             decimalValue = decimalValue * fromBase + digit;
         }
         return decimalValue;
@@ -113,14 +124,26 @@ public class Manager {
      * @return converted value
      */
     private String convertFromDecimal(int decimalValue) {
+
+        //Case: decimal 0 is simply "0".
         if (decimalValue == 0) {
             return "0";
         }
+
+        //String containing all possible digits for base 2, 10 and 16.
         String digits = "0123456789ABCDEF";
         String result = "";
+
+        //Repeatedly divide the decimal value by the output base.
         while (decimalValue > 0) {
+
+            //Get the remainder to determine the current digit.
             int remainder = decimalValue % toBase;
+
+            //Add the new digit to the beginning of the result
             result = digits.charAt(remainder) + result;
+
+            //Remove the last processed digit by integer division.
             decimalValue = decimalValue / toBase;
         }
         return result;
