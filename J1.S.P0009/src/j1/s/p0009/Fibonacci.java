@@ -5,7 +5,7 @@ package j1.s.p0009;
  * using recursion method.
  *
  * @version 30/09/2026
- * @author HaiNTHE191763
+ * @author HaiNT
  */
 public class Fibonacci {
 

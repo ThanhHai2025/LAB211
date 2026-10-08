@@ -6,7 +6,7 @@ import java.util.Scanner;
  * Main class run Fibonacci program.
  *
  * @version 30/9/2026
- * @author HaiNTHE191763
+ * @author HaiNT
  */
 public class Main {
 
