@@ -9,10 +9,17 @@ package j1.s.p0009;
  */
 public class Fibonacci {
 
+    // Store the number of Fibonacci numbers to display. 
+    private int count;
+
     /**
-     * Declare the limit of Fibonacci sequence
+     * Initialize the number of Fibonacci numbers.
+     *
+     * @param count the number of Fibonacci numbers.
      */
-    private final int limit = 45;
+    public Fibonacci(int count) {
+        this.count = count;
+    }
 
     /**
      * Recursively calculates the Fibonacci number at position n.
@@ -37,14 +44,14 @@ public class Fibonacci {
      * Displays the first 45 Fibonacci numbers on screen.
      */
     public void displayFibonacci() {
-        System.out.println("The 45 sequence fibonacci: ");
+        System.out.println("The " + count + " sequence fibonacci: ");
 
-        // Loop to run from index 0 to limit - 1 to print each Fibonacci number.
-        for (int i = 0; i < limit; i++) {
+        // Loop to run from index 0 to count - 1 to print each Fibonacci number.
+        for (int i = 0; i < count; i++) {
             System.out.print(getFibonacci(i));
 
             //Print commas and spaces for all numbers in array except the last one.
-            if (i < limit - 1) {
+            if (i < count - 1) {
                 System.out.print(", ");
             }
         }
