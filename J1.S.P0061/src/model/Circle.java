@@ -1,12 +1,12 @@
 package model;
 
 /**
- * Circle class presents a circle.
+ * Circle class presents a circle that is extended by Shape class.
  *
  * @version 09/10/2026
  * @author HaiNT
  */
-public class Circle extends Shape{
+public class Circle extends Shape {
 
     /**
      * The radius of the circle.
@@ -21,7 +21,7 @@ public class Circle extends Shape{
     public Circle(double radius) {
         this.radius = radius;
     }
-    
+
     /**
      * Gets the radius of the circle.
      *
@@ -62,4 +62,3 @@ public class Circle extends Shape{
         System.out.println("Perimeter: " + getPerimeter());
     }
 }
-

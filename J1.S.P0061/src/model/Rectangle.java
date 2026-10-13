@@ -1,7 +1,7 @@
 package model;
 
 /**
- * Rectangle class presents a rectangle.
+ * Rectangle class presents a rectangle that is extended by Shape class.
  *
  * @version 09/10/2026
  * @author HaiNT

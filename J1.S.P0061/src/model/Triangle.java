@@ -1,7 +1,7 @@
 package model;
 
 /**
- * Triangle class presents a triangle.
+ * Triangle class presents a triangle that is extended by Shape class.
  *
  * @version 09/10/2026
  * @author HaiNT

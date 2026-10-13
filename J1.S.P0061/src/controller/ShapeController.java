@@ -29,13 +29,13 @@ public class ShapeController {
         System.out.println("=====Calculator Shape Program=====");
 
         // Step 2: Input data and create a Rectangle.
-        Shape rectangle = inputRectangle();
+        Shape rectangle = getRectangle();
 
         // Step 3: Input data and create a Circle.
-        Shape circle = inputCircle();
+        Shape circle = getCircle();
 
         // Step 4: Input data and create a Triangle.
-        Shape triangle = inputTriangle();
+        Shape triangle = getTriangle();
 
         // Step 5: Display the results of all shapes.
         rectangle.printResult();
@@ -48,7 +48,7 @@ public class ShapeController {
      *
      * @return a Rectangle object stored as a Shape reference
      */
-    private Shape inputRectangle() {
+    private Shape getRectangle() {
 
         double width = validation.inputPositiveDouble("Please input side width of Rectangle: ");
         double length;
@@ -56,7 +56,7 @@ public class ShapeController {
         // Keep asking until the length is greater than the width.
         while (true) {
             length = validation.inputPositiveDouble("Please input length of Rectangle: ");
-            if (length > width) {
+            if (length >= width) {
                 break;
             }
             System.out.println("Length must be greater than width.");
@@ -69,7 +69,7 @@ public class ShapeController {
      *
      * @return a Circle object stored as a Shape reference
      */
-    private Shape inputCircle() {
+    private Shape getCircle() {
         double radius = validation.inputPositiveDouble("Please input radius of Circle: ");
         return new Circle(radius);
     }
@@ -79,8 +79,8 @@ public class ShapeController {
      *
      * @return a valid Triangle object stored as a Shape reference
      */
-    private Shape inputTriangle() {
-        
+    private Shape getTriangle() {
+
         // Keep asking until three side of triangle is valid.
         while (true) {
             double sideA = validation.inputPositiveDouble("Please input side A of Triangle: ");
