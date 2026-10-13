@@ -29,16 +29,16 @@ public class ShoppingManagement {
             System.out.print("Input value of bill " + (i + 1) + ": ");
             bills[i] = scanner.nextInt();
         }
-        //Step 3: Entered amount in wallet.
+        //Step 3: Entered amount of the wallet.
         System.out.print("Input value of wallet: ");
         int amount = scanner.nextInt();
 
-        //Step:  Processing calculate total bills.
+        //Step 4: Processing calculate total amount of the bills.
         int total = calcTotal(bills);
         Wallet wallet = new Wallet(amount);
         Person person = new Person(wallet);
 
-        //Step 5:  Display the result
+        //Step 5: Display the result can buy or not.
         System.out.println("This is total of bill: " + total);
         if (person.getWallet().payMoney(total)) {
             System.out.println("You can buy it.");
@@ -50,8 +50,8 @@ public class ShoppingManagement {
     /**
      * Function calculate total of the bills.
      *
-     * @param bills the bills
-     * @return total
+     * @param bills the bills.
+     * @return total amount of the bills.
      */
     private int calcTotal(int[] bills) {
         int total = 0;

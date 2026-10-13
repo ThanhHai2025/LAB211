@@ -9,7 +9,7 @@ package model;
 public class Wallet {
 
     /**
-     * amount store money buyer have in wallet.
+     * amount store money of wallet buyer have.
      */
     private int amount;
 
@@ -26,7 +26,7 @@ public class Wallet {
      * payMoney check buyer have enough money to pay.
      *
      * @param total total of bills.
-     * @return can buy if amount > total of bills.
+     * @return can buy if amount of buyer > total amount of the bills.
      */
     public boolean payMoney(int total) {
         return this.amount >= total;
