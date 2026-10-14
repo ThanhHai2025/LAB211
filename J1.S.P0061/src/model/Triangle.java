@@ -85,15 +85,6 @@ public class Triangle extends Shape {
     }
 
     /**
-     * Checks whether the three sides can form a valid triangle.
-     *
-     * @return true if the triangle is valid; otherwise false
-     */
-    public boolean isValid() {
-        return sideA + sideB > sideC && sideA + sideC > sideB && sideB + sideC > sideA;
-    }
-
-    /**
      * Displays the information of the triangle.
      */
     @Override

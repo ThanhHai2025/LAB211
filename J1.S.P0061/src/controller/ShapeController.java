@@ -1,98 +1,100 @@
 package controller;
 
+import java.util.Scanner;
 import model.Circle;
 import model.Rectangle;
 import model.Shape;
 import model.Triangle;
-import utils.Validation;
 
 /**
  * ShapeController class the input and display process of the Shape Calculator
  * program.
  *
- * @version 09/10/2026
+ * @version 14/10/2026
  * @author HaiNT
  */
 public class ShapeController {
 
     /**
-     * Object used to validate user input.
+     * Scanner used to read input from the keyboard.
      */
-    private Validation validation = new Validation();
+    private Scanner scanner = new Scanner(System.in);
+
+    /**
+     * Gets a positive double value from the user.
+     *
+     * @param message the message displayed before input
+     * @return a positive double value
+     */
+    public double getDouble(String message) {
+
+        // Keep asking until the user enters a valid positive number.
+        while (true) {
+            try {
+                System.out.print(message);
+                double value = Double.parseDouble(scanner.nextLine());
+                if (value > 0) {
+                    return value;
+                }
+                System.out.println("Value must be greater than 0.");
+            } catch (NumberFormatException e) {
+                System.out.println("Please input a valid number.");
+            }
+        }
+    }
+
+    /**
+     * Checks whether the three sides can form a valid triangle.
+     *
+     * @return true if the triangle is valid; otherwise false
+     */
+    private boolean isTriangle(double sideA, double sideB, double sideC) {
+        return sideA + sideB > sideC && sideA + sideC > sideB && sideB + sideC > sideA;
+    }
 
     /**
      * Runs the Shape Calculator program.
      */
     public void run() {
-
-        // Step 1: Display the program title.
         System.out.println("=====Calculator Shape Program=====");
-
-        // Step 2: Input data and create a Rectangle.
-        Shape rectangle = getRectangle();
-
-        // Step 3: Input data and create a Circle.
-        Shape circle = getCircle();
-
-        // Step 4: Input data and create a Triangle.
-        Shape triangle = getTriangle();
-
-        // Step 5: Display the results of all shapes.
-        rectangle.printResult();
-        circle.printResult();
-        triangle.printResult();
-    }
-
-    /**
-     * Inputs the width and length and creates a Rectangle.
-     *
-     * @return a Rectangle object stored as a Shape reference
-     */
-    private Shape getRectangle() {
-
-        double width = validation.inputPositiveDouble("Please input side width of Rectangle: ");
+        double width = getDouble("Please input side width of Rectangle: ");
         double length;
-
-        // Keep asking until the length is greater than the width.
         while (true) {
-            length = validation.inputPositiveDouble("Please input length of Rectangle: ");
+            length = getDouble("Please input length of Rectangle: ");
             if (length >= width) {
                 break;
             }
-            System.out.println("Length must be greater than width.");
+            System.err.println("Length must be greater than width.");
         }
-        return new Rectangle(width, length);
-    }
 
-    /**
-     * Inputs the radius and creates a Circle.
-     *
-     * @return a Circle object stored as a Shape reference
-     */
-    private Shape getCircle() {
-        double radius = validation.inputPositiveDouble("Please input radius of Circle: ");
-        return new Circle(radius);
-    }
+        double radius = getDouble("Please input radius of Circle: ");
 
-    /**
-     * Inputs three sides and creates a valid Triangle.
-     *
-     * @return a valid Triangle object stored as a Shape reference
-     */
-    private Shape getTriangle() {
+        double sideA;
+        double sideB;
+        double sideC;
 
-        // Keep asking until three side of triangle is valid.
         while (true) {
-            double sideA = validation.inputPositiveDouble("Please input side A of Triangle: ");
-            double sideB = validation.inputPositiveDouble("Please input side B of Triangle: ");
-            double sideC = validation.inputPositiveDouble("Please input side C of Triangle: ");
-            Triangle triangle = new Triangle(sideA, sideB, sideC);
-
-            // Check whether the three sides can form a valid triangle.
-            if (triangle.isValid()) {
-                return triangle;
+            sideA = getDouble("Please input side A of Triangle: ");
+            sideB = getDouble("Please input side B of Triangle: ");
+            sideC = getDouble("Please input side C of Triangle: ");
+            if (isTriangle(sideA, sideB, sideC)) {
+                break;
             }
-            System.out.println("Invalid triangle! Please re-input.");
+            System.err.println("Invalid triangle! Please re-input.");
         }
+
+        //Declare available shapes to demonstrate polymorphism.
+        Shape shape;
+        //Assign the Rectangle object and display result.
+        shape = new Rectangle(width, length);
+        shape.printResult();
+
+        //Assign the Circle object and display result.
+        shape = new Circle(radius);
+        shape.printResult();
+
+        //Assign the Triangle object and display result.
+        shape = new Triangle(sideA, sideB, sideC);
+        shape.printResult();
     }
 }
