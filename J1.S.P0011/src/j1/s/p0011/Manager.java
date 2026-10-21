@@ -99,8 +99,12 @@ public class Manager {
 
         //String containing all possible digits for base 2, 10 and 16.
         String digits = "0123456789ABCDEF";
-        //Convert hexadecimal letters to uppercase so that A-F
+
+        //Convert hexadecimal letters to uppercase so that A-F.
         String valueUpper = inputValue.toUpperCase();
+
+        //Get the string length to calculate the exponent.
+        int length = valueUpper.length();
 
         //Loop through each character from left to right.
         for (int i = 0; i < valueUpper.length(); i++) {
@@ -111,8 +115,11 @@ public class Manager {
             //Convert the character into its numeric value. EX: 'A' -> 10.
             int digit = digits.indexOf(character);
 
-            //Add the current digit to the decimal value according to the selected input base.
-            decimalValue = decimalValue * fromBase + digit;
+            //Calculate the exponent: the leftmost character has an exponent of (length - 1 - i)
+            int power = length - 1 - i;
+
+            // Add to the result: digit * (base ^ power)
+            decimalValue += digit * Math.pow(fromBase, power);
         }
         return decimalValue;
     }
