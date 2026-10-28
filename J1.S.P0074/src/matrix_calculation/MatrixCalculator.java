@@ -1,8 +1,8 @@
 package matrix_calculation;
 
 /**
- * The MatrixCalculator class handles matrix operations:
- * addition, subtraction, and multiplication.
+ * The MatrixCalculator class handles matrix operations: addition, subtraction,
+ * and multiplication.
  */
 public class MatrixCalculator {
 
@@ -71,7 +71,7 @@ public class MatrixCalculator {
             for (int j = 0; j < matrix2.getCols(); j++) {
                 int sum = 0;
 
-                // Multiply corresponding elements of the row and column.
+                // Calculate the product of the row (Matrix 1) and the column (Matrix 2).
                 for (int k = 0; k < matrix1.getCols(); k++) {
                     sum += data1[i][k] * data2[k][j];
                 }
