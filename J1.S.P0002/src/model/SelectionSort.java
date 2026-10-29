@@ -6,8 +6,8 @@ import java.util.Random;
  * SelectionSort class provides initialization, generates random array, displays
  * and sorts array by Selection Sort algorithm.
  *
- * @version 15/09/2026
- * @author HaiNTHE191763
+ * @version 29/10/2026
+ * @author HaiNT
  */
 public class SelectionSort {
 
