@@ -7,8 +7,8 @@ import java.util.Random;
  * values, display the array, and perform a linear search for a value within the
  * array.
  *
- * @version 29/09/2026
- * @author HaiNTHE191763
+ * @version 29/10/2026
+ * @author HaiNT
  */
 public class LinearSearch {
 

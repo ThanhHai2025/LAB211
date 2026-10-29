@@ -6,8 +6,8 @@ import utils.Validation;
 /**
  * Main class is used to run LinearSearch program.
  *
- * @version 11/09/2026
- * @author HaiNTHE191763
+ * @version 29/10/2026
+ * @author HaiNT
  */
 public class Main {
 
