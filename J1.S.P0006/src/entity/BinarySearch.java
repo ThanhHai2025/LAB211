@@ -7,8 +7,8 @@ import java.util.Random;
  * random values, sort the array in ascending order, display the array, and
  * perform a binary search for a value in the array.
  *
- * @version 30/09/2026
- * @author HaiNTHE191763
+ * @version 29/10/2026
+ * @author HaiNT
  */
 public class BinarySearch {
 

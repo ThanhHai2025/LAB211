@@ -6,8 +6,8 @@ import utils.Validation;
 /**
  * Main class is used to run BinarySearch program.
  *
- * @version 30/09/2026
- * @author HaiNTHE191763
+ * @version 29/10/2026
+ * @author HaiNT
  */
 public class Main {
 
