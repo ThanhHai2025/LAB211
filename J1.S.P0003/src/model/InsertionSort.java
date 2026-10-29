@@ -6,8 +6,8 @@ import java.util.Random;
  * InsertionSort class provides initialization, generates random array, displays
  * and sorts array by Insertion Sort algorithm.
  *
- * @version 17/09/2026
- * @author HaiNTHE191763
+ * @version 29/10/2026
+ * @author HaiNT
  */
 public class InsertionSort {
 
