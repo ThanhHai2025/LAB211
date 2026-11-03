@@ -31,7 +31,7 @@ public class Fresher extends Candidate {
     }
 
     /**
-     * Constructor all parameter for Experience Candidate.
+     * Constructor all parameter for Fresher Candidate.
      *
      * @param candidateId Candidate ID
      * @param firstName First name
@@ -40,7 +40,7 @@ public class Fresher extends Candidate {
      * @param address Address
      * @param phone Phone number
      * @param email Email address
-     * @param candidateType Candidate type (0 for Experience)
+     * @param candidateType Candidate type (1 for Fresher)
      * @param graduationDate Graduation time/date
      * @param graduationRank Rank of graduation
      * @param education University name

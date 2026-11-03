@@ -6,7 +6,7 @@ package model;
  * @version 02/11/2026
  * @author HaiNT
  */
-public class Internship extends Candidate {
+public class Intern extends Candidate {
 
     /**
      * Major field of study.
@@ -26,12 +26,12 @@ public class Internship extends Candidate {
     /**
      * Default constructor.
      */
-    public Internship() {
+    public Intern() {
         super();
     }
 
     /**
-     * Constructor all parameter for Experience Candidate.
+     * Constructor all parameter for Intern Candidate.
      *
      * @param candidateId Candidate ID
      * @param firstName First name
@@ -40,12 +40,12 @@ public class Internship extends Candidate {
      * @param address Address
      * @param phone Phone number
      * @param email Email address
-     * @param candidateType Candidate type (0 for Experience)
+     * @param candidateType Candidate type (3 for Intern)
      * @param majors Major field of study
      * @param semester Current semester
      * @param universityName University name
      */
-    public Internship(String candidateId, String firstName, String lastName, int birthDate,
+    public Intern(String candidateId, String firstName, String lastName, int birthDate,
             String address, String phone, String email, int candidateType,
             String majors, String semester, String universityName) {
         super(candidateId, firstName, lastName, birthDate, address, phone, email, candidateType);

@@ -11,12 +11,12 @@ import java.util.Scanner;
  */
 public class Validation {
 
-    private Scanner scanner = new Scanner(System.in);
+    private final Scanner scanner = new Scanner(System.in);
 
     /**
      * Regular expression for valid email format (<account name>@<domain>).
      */
-    private final String EMAIL_REGEX = "[A-za-z0-9+_.-]+@[A-Za-z0-0.-]=$";
+    private final String EMAIL_REGEX = "^[A-za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$";
 
     /**
      * Regular expression for valid phone number (digits only, minimum 10
@@ -34,7 +34,7 @@ public class Validation {
      */
     public int getInt(String mesage, int min, int max) {
 
-        //Loop contiuously util a valid integer value within range is entered.
+        //Loop continuously until a valid integer value within range is entered.
         while (true) {
             System.out.print(mesage);
             try {
@@ -83,7 +83,7 @@ public class Validation {
         //Get the system's current year dynamically
         int currentYear = Calendar.getInstance().get(Calendar.YEAR);
 
-        //Loop continously until a valid birth year is entered.
+        //Loop continuously until a valid birth year is entered.
         while (true) {
             System.out.print(message);
             try {
@@ -108,7 +108,7 @@ public class Validation {
      */
     public String getPhone(String message) {
 
-        //Loop continously until phone format matches regex.
+        //Loop continuously until phone format matches regex.
         while (true) {
             System.out.print(message);
             String phone = scanner.nextLine().trim();
@@ -122,7 +122,7 @@ public class Validation {
     }
 
     /**
-     * Check Email format: <account name>@<domain>.
+     * Check Email format: {<account name>@<domain>}.
      *
      * @param message Prompt message display to user
      * @return Valid email string
@@ -134,7 +134,7 @@ public class Validation {
             System.out.print(message);
             String email = scanner.nextLine().trim();
 
-            //Check if email maches regex.
+            //Check if email matches regex.
             if (email.matches(EMAIL_REGEX)) {
                 return email;
             }
@@ -149,7 +149,7 @@ public class Validation {
      * @return valid year of experience
      */
     public int getYearOfExp(String message) {
-        //Reuse getInt method to check rang 0 to 100
+        //Reuse getInt method to check range 0 to 100
         return getInt(message, 0, 100);
     }
 
@@ -161,7 +161,7 @@ public class Validation {
      */
     public String getGraduationRank(String message) {
 
-        //Loop continously until input match one of 4 valid ranks.
+        //Loop continuously until input match one of 4 valid ranks.
         while (true) {
             System.out.print(message);
             String rank = scanner.nextLine().trim();
@@ -186,7 +186,7 @@ public class Validation {
      * @return true if user choose 'Y', false if 'N'.
      */
     public boolean getYN(String message) {
-        //Loop continously until user inputs Y or N.
+        //Loop continuously until user inputs Y or N.
         while (true) {
             System.out.print(message);
             String answer = scanner.nextLine().trim();
