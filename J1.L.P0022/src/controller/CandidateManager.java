@@ -55,7 +55,7 @@ public class CandidateManager {
     /**
      * Input ID and check for duplication.
      *
-     * @return
+     * @return a candidate unique ID
      */
     private String inputId() {
         while (true) {
