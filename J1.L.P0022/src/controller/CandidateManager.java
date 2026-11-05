@@ -147,10 +147,11 @@ public class CandidateManager {
                         address, phone, email, type, expInYear, proSkill);
                 candidateList.add(exp);
             } else if (type == 1) {
-                String gradudationDate = validation.getString("Enter Graduation time: ");
+                int gradudationYear = validation.getGraduationYear("Enter Graduation time: ", birthDate);
+                String gradudationDate = String.valueOf(gradudationYear);
                 String graduationRank = validation.getGraduationRank("Enter Rank of graduation (Excellence/Good/Fair/Poor): ");
                 String education = validation.getString("Enter University where graduated: ");
-
+      
                 //Create Fresher candidate object to list.
                 Candidate fresher = new Fresher(id, firstName, lastName, birthDate,
                         address, phone, email, type, gradudationDate, graduationRank, education);
