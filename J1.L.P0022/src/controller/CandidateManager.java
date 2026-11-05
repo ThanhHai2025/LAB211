@@ -53,11 +53,27 @@ public class CandidateManager {
     }
 
     /**
+     * Input ID and check for duplication.
+     *
+     * @return
+     */
+    private String inputId() {
+        while (true) {
+            String id = validation.getString("Enter ID: ");
+            //Check if ID already exist
+            if (!isIdExist(id)) {
+                return id;
+            }
+            System.err.println("Candidate ID already exist! Please enter another ID.");
+        }
+    }
+
+    /**
      * Display all candidates grouped by candidate type.
      */
     private void displayAllCandidates() {
         //Display Experience candidates.
-        System.out.println("\nList of candidate: ");
+        System.out.println("\nList of candidates:");
         System.out.println("===========EXPERIENCE CANDIDATE============");
         for (Candidate candidate : candidateList) {
             //Print name is object is an instance of Experience.
@@ -113,15 +129,7 @@ public class CandidateManager {
             System.out.println("Entering information for " + candidateType + " candidate: ");
 
             //Step 1: Input common information
-            String id;
-            while (true) {
-                id = validation.getString("Enter ID: ");
-                //Check if ID already exist
-                if (!isIdExist(id)) {
-                    break;
-                }
-                System.err.println("Candidate ID already exist! Please enter another ID.");
-            }
+            String id = inputId();
             String firstName = validation.getString("Enter First Name: ");
             String lastName = validation.getString("Enter Last Name: ");
             int birthDate = validation.getBirthDate("Enter Birth Date (1900-Current Year): ");
@@ -162,7 +170,6 @@ public class CandidateManager {
             //Ask if user wants to continue adding more candidates of this type.
             boolean continueChoice = validation.getYN("Do you want to continue (Y/N)? : ");
             if (!continueChoice) {
-                System.out.println("\nList of created candidate: ");
                 displayAllCandidates();
                 break;
             }
@@ -179,7 +186,6 @@ public class CandidateManager {
             return;
         }
         // Step 1: Display all candidates grouped by type.
-        System.out.println("\nList of candidates:");
         displayAllCandidates();
 
         //Step 2: Read search criteria from user.
@@ -189,16 +195,16 @@ public class CandidateManager {
         boolean found = false;
 
         //Step 3:Iterate through list to display matching candidate.
+        String keyword = searchName.toLowerCase();
         for (Candidate candidate : candidateList) {
             //Check if candidate type matches search type.
             if (candidate.getCandidateType() == searchType) {
-                //Check if full name contains search keyword (case-insensitive)
-                String fullName = (candidate.getFirstName() + " " + candidate.getLastName()).toLowerCase();
-                if (fullName.contains(searchName.toLowerCase())) {
-                    System.out.printf("%-15s | %-7s | %-15s | %-12s | %-20s | %-5d%n", 
-                            candidate.getFirstName() + " " + candidate.getLastName(),
-                            candidate.getBirthDate(), candidate.getAddress(), candidate.getPhone(), 
-                            candidate.getEmail(), candidate.getCandidateType());
+                String firstName = candidate.getFirstName().toLowerCase();
+                String lastName = candidate.getLastName().toLowerCase();
+                if (firstName.contains(keyword) || lastName.contains(keyword)) {
+                    System.out.println(candidate.getFirstName() + " " + candidate.getLastName() + " | "
+                            + candidate.getBirthDate() + " | " + candidate.getAddress() + " | "
+                            + candidate.getPhone() + " | " + candidate.getEmail() + " | " + candidate.getCandidateType());
                     found = true;
                 }
             }
