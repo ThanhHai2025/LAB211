@@ -86,17 +86,18 @@ public class Validation {
         //Loop continuously until a valid birth year is entered.
         while (true) {
             System.out.print(message);
-            try {
-                int year = Integer.parseInt(scanner.nextLine().trim());
-
-                //Check if birth year is between 1900 and current year.
-                if (year >= 1900 && year <= currentYear) {
-                    return year;
-                }
-                System.err.println("Birth date must be from 1900 to current year (" + currentYear + ")");
-            } catch (NumberFormatException e) {
+            String input = scanner.nextLine().trim();
+            if (!input.matches("\\d{4}")) {
                 System.err.println("Birth date must be a 4-digits number!");
+                continue;
             }
+            int year = Integer.parseInt(input);
+
+            //Check if birth year is between 1900 and current year.
+            if (year >= 1900 && year <= currentYear) {
+                return year;
+            }
+            System.err.println("Birth date must be from 1900 to current year (" + currentYear + ")");
         }
     }
 
