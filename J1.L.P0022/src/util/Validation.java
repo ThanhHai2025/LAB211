@@ -155,6 +155,25 @@ public class Validation {
     }
 
     /**
+     * Check graduation Year: must be greater birth year and smaller or equal
+     * current year.
+     *
+     * @param message Prompt message displayed to user
+     * @param birtDate Candidate's birth year
+     * @return Validated graduation year
+     */
+    public int getGraduationYear(String message, int birtDate) {
+        int currentYear = Calendar.getInstance().get(Calendar.YEAR);
+        while (true) {
+            int graYear = getInt(message, 1900, currentYear);
+            if (graYear > birtDate) {
+                return graYear;
+            }
+            System.err.println("Gradudation Year must be greater than birth year (" + birtDate + ")!");
+        }
+    }
+
+    /**
      * Check rank of graduation: excellence, good, fair, poor.
      *
      * @param message Prompt message display to user
