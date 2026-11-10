@@ -29,7 +29,7 @@ public class Sort {
             //Push the larger element to the end of the array.
             for (int j = 0; j < arrayNeedSort.length - 1 - i; j++) {
 
-                // Nếu phần tử trước lớn hơn phần tử sau thì tiến hành đổi chỗ
+                //Push the greater element to the end of the array.
                 if (arrayNeedSort[j] > arrayNeedSort[j + 1]) {
                     temp = arrayNeedSort[j];
                     arrayNeedSort[j] = arrayNeedSort[j + 1];

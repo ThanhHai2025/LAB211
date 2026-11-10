@@ -69,13 +69,10 @@ public class Main {
                     //Step 4: Display the array results after sorting in descending order.
                     sortObj.displayArray(sortedDesc, false);
                     break;
-
                 case 4:
                     //Step 5: Exit the program.
-                    System.out.println("Exiting program. Goodbye!");
-                    scanner.close();
+                    System.out.println("Exit program.");
                     return;
-
                 default:
                     System.out.println("Invalid option! Please choose between 1 and 4.");
             }
