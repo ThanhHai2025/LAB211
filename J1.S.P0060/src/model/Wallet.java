@@ -1,32 +1,34 @@
 package model;
 
 /**
- * Wallet class stored amount that buyer use to pay the bills.
+ * Wallet class stores the amount of money that the buyer can use to pay for
+ * bills.
  *
- * @version 13/10/2026
+ * @version 10/11/2026
  * @author HaiNT
  */
 public class Wallet {
 
     /**
-     * amount store money of wallet buyer have.
+     * The amount of money stored in the wallet.
      */
     private int amount;
 
     /**
-     * Construct and initialize amount object.
+     * Creates a Wallet object with the specified amount of money.
      *
-     * @param amount amount of wallet
+     * @param amount amount of money in the wallet.
      */
     public Wallet(int amount) {
         this.amount = amount;
     }
 
     /**
-     * payMoney check buyer have enough money to pay.
+     * Checks whether the buyer has enough money to pay for the bills.
      *
-     * @param total total of bills.
-     * @return can buy if amount of buyer > total amount of the bills.
+     * @param total the total amount of the bills.
+     * @return true if the buyer's amount is greater than or equal to the total;
+     * false otherwise.
      */
     public boolean payMoney(int total) {
         return this.amount >= total;

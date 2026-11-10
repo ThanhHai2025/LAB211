@@ -1,21 +1,32 @@
 package model;
 
 /**
- * Person class presents buyer who have wallet.
+ * Person class represents buyer who owns a wallet.
  *
- * @version 13/10/2026
+ * @version 10/11/2026
  * @author HaiNT
  */
 public class Person {
 
+    /**
+     * The wallet owned by the buyer
+     */
     private Wallet wallet;
-// gọi theo kiểu tham chiếu, Người này sở hữu một cái Ví, và cái Ví đó có khả năng tự kiểm tra tiền
-// lớp person không quan tâm cái ví hoạt động thế nào, chỉ cần hỏi cái ví này đủ tiền mua hay không thôi.
 
+    /**
+     * Creates a Person object with the specified wallet.
+     *
+     * @param wallet the wallet owned by the buyer
+     */
     public Person(Wallet wallet) {
         this.wallet = wallet;
     }
-    
+
+    /**
+     * Returns the wallet owned by the buyer.
+     *
+     * @return the wallet of the buyer
+     */
     public Wallet getWallet() {
         return wallet;
     }

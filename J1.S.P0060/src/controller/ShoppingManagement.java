@@ -5,11 +5,11 @@ import model.Person;
 import model.Wallet;
 
 /**
- * ShoppingManagement class processing the value user entered, calculate total
- * of bills, compare the amount of wallet and display result user can or can not
- * buy it.
+ * The ShoppingManagement class handles user input, calculates the total amount
+ * of the bills, compares it with the wallet balance, and displays whether the
+ * buyer can afford the purchase.
  *
- * @version 13/10/2026
+ * @version 10/11/2026
  * @author HaiNT
  */
 public class ShoppingManagement {
@@ -33,12 +33,12 @@ public class ShoppingManagement {
         System.out.print("Input value of wallet: ");
         int amount = scanner.nextInt();
 
-        //Step 4: Processing calculate total amount of the bills.
+        //Step 4: Calculate the total amount of the bills.
         int total = calcTotal(bills);
         Wallet wallet = new Wallet(amount);
         Person person = new Person(wallet);
 
-        //Step 5: Display the result can buy or not.
+        //Step 5: Display the result of the payment check.
         System.out.println("This is total of bill: " + total);
         if (person.getWallet().payMoney(total)) {
             System.out.println("You can buy it.");
@@ -48,13 +48,14 @@ public class ShoppingManagement {
     }
 
     /**
-     * Function calculate total of the bills.
+     * Calculate the total amount of all bills.
      *
-     * @param bills the bills.
+     * @param bills the array of bill amounts.
      * @return total amount of the bills.
      */
     private int calcTotal(int[] bills) {
         int total = 0;
+        //Calculate the total amount of all bills.
         for (int bill : bills) {
             total += bill;
         }
