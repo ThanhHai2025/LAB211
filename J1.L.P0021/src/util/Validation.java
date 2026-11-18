@@ -3,7 +3,7 @@ package util;
 import java.util.Scanner;
 
 /**
- * Validation class to validate and read candidate input data from console.
+ * The Validation class validates and reads student input data from console.
  *
  * @version 17/11/206
  * @author HaiNT
@@ -23,7 +23,7 @@ public class Validation {
     public int getInt(String message, int min, int max) {
         while (true) {
             try {
-                System.out.println(message);
+                System.out.print(message);
                 int result = Integer.parseInt(scanner.nextLine().trim());
                 if (result >= min && result <= max) {
                     return result;
@@ -43,12 +43,12 @@ public class Validation {
      */
     public String getString(String message) {
         while (true) {
-            System.out.println(message);
+            System.out.print(message);
             String result = scanner.nextLine().trim();
             if (!result.isEmpty()) {
                 return result;
             }
-            System.out.println("Not empty. Enter again: ");
+            System.err.println("Not empty! Enter enter again. ");
         }
     }
 
@@ -74,14 +74,14 @@ public class Validation {
     }
 
     /**
-     * Ask user whether to input (U/D).
+     * Ask user whether to update or delete.
      *
      * @param message Prompt message display to user
      * @return true if user choose 'U', false if 'D'.
      */
     public boolean getUD(String message) {
         while (true) {
-            System.out.println(message);
+            System.out.print(message);
             String result = scanner.nextLine().trim();
             if (result.equalsIgnoreCase("U")) {
                 return true;
@@ -89,7 +89,7 @@ public class Validation {
             if (result.equalsIgnoreCase("D")) {
                 return false;
             }
-            System.out.println("Only onput U or D! Please enter again.");
+            System.err.println("Only input U or D! Please enter again.");
         }
     }
 
