@@ -79,4 +79,11 @@ public class Report {
     public int getTotalCourse() {
         return totalCourse;
     }
+    
+    /**
+     * Increases the total course count by one.
+     */
+    public void increaseTotalCourse(){
+        totalCourse++;
+    }
 }
