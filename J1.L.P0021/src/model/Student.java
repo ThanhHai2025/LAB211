@@ -1,7 +1,7 @@
 package model;
 
 /**
- * The Student class store student information such as id, student name,
+ * The Student class store student information such as ID, student name,
  * semester and course name.
  *
  * @version 16/11/2026
@@ -30,7 +30,7 @@ public class Student implements Comparable<Student> {
     private String courseName;
 
     /**
-     * Constructor a Student object.
+     * Construct a Student object.
      *
      * @param id The student ID
      * @param studentName The student name
@@ -119,12 +119,12 @@ public class Student implements Comparable<Student> {
     /**
      * Compare two students by their name.
      *
-     * @param o other the student to compare
+     * @param other the student to compare
      * @return a negative integer, zero, or a positive integer
      */
     @Override
-    public int compareTo(Student o) {
-        return this.studentName.compareToIgnoreCase(o.studentName);
+    public int compareTo(Student other) {
+        return this.studentName.compareToIgnoreCase(other.studentName);
     }
 
     /**
